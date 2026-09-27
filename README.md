@@ -44,14 +44,15 @@ A working proof-of-concept for a physiological **Healthcare Digital Twin** desig
 ---
 
 ## 2. Team Details
-- **Student Team**: Team In-Silico Health
-- **Lead Developer & ML Engineer**: Lead Participant
-- **Competition Track**: Happiest Health Digital Twin Challenge 2026 (Proof-of-Concept Track)
+- **Team**: GlucoStudio
+- **Team Members**: Abhi Pandey, Tanishq Das
+- **Competition**: Happiest Health Digital Twin Challenge 2026 (Proof-of-Concept Track)
 
 ---
 
 ## 3. College & Incubator
-- **Institution**: Department of Computer Science & Engineering / Biomedical Informatics
+- **Institution / College**: VIT Bhopal University
+- **Presentation Pitch Deck**: [`docs/GlycoTwin_Presentation.pdf`](docs/GlycoTwin_Presentation.pdf)
 - **Innovation Partner**: Happiest Health Digital Health Innovation Cell
 
 ---
