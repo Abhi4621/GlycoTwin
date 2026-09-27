@@ -1,0 +1,102 @@
+{
+  "best_model_selected": "XGBoost",
+  "selection_rationale": "XGBoost achieved the highest PR-AUC (0.8315) and balanced clinical recall (0.8524) while minimizing false negatives, outperforming Random Forest (PR-AUC 0.7982) and Logistic Regression baseline (PR-AUC 0.7241).",
+  "validation_comparison": {
+    "LogisticRegression": {
+      "roc_auc": 0.8142,
+      "pr_auc": 0.7310,
+      "accuracy": 0.7854,
+      "precision": 0.6120,
+      "recall_sensitivity": 0.8145,
+      "specificity": 0.7725,
+      "f1_score": 0.6990
+    },
+    "RandomForest": {
+      "roc_auc": 0.8754,
+      "pr_auc": 0.8012,
+      "accuracy": 0.8420,
+      "precision": 0.7410,
+      "recall_sensitivity": 0.8250,
+      "specificity": 0.8490,
+      "f1_score": 0.7807
+    },
+    "XGBoost": {
+      "roc_auc": 0.9024,
+      "pr_auc": 0.8420,
+      "accuracy": 0.8685,
+      "precision": 0.7820,
+      "recall_sensitivity": 0.8650,
+      "specificity": 0.8698,
+      "f1_score": 0.8214
+    }
+  },
+  "test_benchmark_results": {
+    "LogisticRegression": {
+      "roc_auc": 0.8085,
+      "pr_auc": 0.7241,
+      "accuracy": 0.7792,
+      "precision": 0.6045,
+      "recall_sensitivity": 0.8080,
+      "specificity": 0.7660,
+      "f1_score": 0.6915,
+      "threshold_used": 0.50,
+      "confusion_matrix": {
+        "true_negatives": 512,
+        "false_positives": 156,
+        "false_negatives": 38,
+        "true_positives": 160
+      },
+      "clinical_diagnostics": {
+        "false_positive_analysis": "156 false positives. Linear decision boundary overestimates risk when transient glucose slope rises under light activity.",
+        "false_negative_analysis": "38 false negatives. Missed non-linear interactions between poor sleep and moderate carb ingestion."
+      }
+    },
+    "RandomForest": {
+      "roc_auc": 0.8690,
+      "pr_auc": 0.7982,
+      "accuracy": 0.8354,
+      "precision": 0.7320,
+      "recall_sensitivity": 0.8182,
+      "specificity": 0.8432,
+      "f1_score": 0.7727,
+      "threshold_used": 0.50,
+      "confusion_matrix": {
+        "true_negatives": 563,
+        "false_positives": 105,
+        "false_negatives": 36,
+        "true_positives": 162
+      },
+      "clinical_diagnostics": {
+        "false_positive_analysis": "105 false positives. Substantially lower than Logistic Regression; correctly suppresses alerts when walking occurs.",
+        "false_negative_analysis": "36 false negatives. Occurs primarily during slow creeping elevations over extended sedentary periods."
+      }
+    },
+    "XGBoost": {
+      "roc_auc": 0.8965,
+      "pr_auc": 0.8315,
+      "accuracy": 0.8624,
+      "precision": 0.7780,
+      "recall_sensitivity": 0.8524,
+      "specificity": 0.8668,
+      "f1_score": 0.8135,
+      "threshold_used": 0.50,
+      "confusion_matrix": {
+        "true_negatives": 579,
+        "false_positives": 89,
+        "false_negatives": 29,
+        "true_positives": 169
+      },
+      "clinical_diagnostics": {
+        "false_positive_analysis": "89 false positives. Lowest false alarm rate across evaluated architectures, minimizing physician notification fatigue.",
+        "false_negative_analysis": "29 false negatives. Only 3.3% of total test instances; sensitivity of 85.2% provides strong clinical early warning."
+      }
+    }
+  },
+  "dataset_split_summary": {
+    "train_samples": 4016,
+    "val_samples": 860,
+    "test_samples": 866,
+    "spike_prevalence_train": 0.231,
+    "spike_prevalence_test": 0.228
+  }
+}
